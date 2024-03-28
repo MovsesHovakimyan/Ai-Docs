@@ -1,3 +1,4 @@
+#include <QMessageBox>
 #include "generalpageabovesidefieloftemplates.h"
 #include "newfile.h"
 #include "resume.h"
@@ -5,6 +6,7 @@
 #include "letter.h"
 #include "projectproposal.h"
 #include "brochure.h"
+
 
 Templates::Templates(QWidget *parent)
     : QWidget(parent)
@@ -25,12 +27,14 @@ Templates::Templates(QWidget *parent)
     m_templateGalleryButton -> setIcon(QIcon("/Users/test/Desktop/Icons/scroll.png"));
     m_templateGalleryButton -> setFixedSize(QSize(188,24));
     m_templateGalleryButton -> setStyleSheet("color: black");
+    connect(m_templateGalleryButton, SIGNAL(clicked()), this, SLOT(m_templateGallery()));
 
     m_topLayout -> addWidget(m_templateGalleryButton);
 
     m_templatesHideButton = new QPushButton();
     m_templatesHideButton -> setIcon(QIcon("/Users/test/Desktop/Icons/options.png"));
     m_templatesHideButton -> setFixedSize(QSize(24,24));
+    connect(m_templatesHideButton, SIGNAL(clicked()), this, SLOT(close()));
 
     m_topLayout -> addWidget(m_templatesHideButton);
 
@@ -130,6 +134,10 @@ void Templates::m_template5Item ()
     template5Widget.show();
 }
 
+void Templates::m_templateGallery ()
+{
+    QMessageBox::information(this, "Chek", "This button works");
+}
 
 
 

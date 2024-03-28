@@ -38,6 +38,7 @@ private slots:
     void m_template3Item ();
     void m_template4Item ();
     void m_template5Item ();
+    void m_templateGallery ();
 };
 
 
