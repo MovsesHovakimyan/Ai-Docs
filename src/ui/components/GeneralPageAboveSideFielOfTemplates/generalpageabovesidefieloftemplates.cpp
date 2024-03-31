@@ -1,12 +1,5 @@
 #include <QMessageBox>
 #include "generalpageabovesidefieloftemplates.h"
-#include "newfile.h"
-#include "resume.h"
-#include "resumecoral.h"
-#include "letter.h"
-#include "projectproposal.h"
-#include "brochure.h"
-
 
 Templates::Templates(QWidget *parent)
     : QWidget(parent)
@@ -94,44 +87,45 @@ Templates::Templates(QWidget *parent)
 
 void Templates::m_newFileItem ()
 {
-    NewFile newFileWidget(this);
-    newFileWidget.setWindowTitle("NewFile");
-    newFileWidget.show();
+    m_newFileTemplate = new NewFile();
+    m_newFileTemplate -> setWindowTitle("New File Tempalte");
+    m_newFileTemplate -> show();
 }
 
 void Templates::m_template1Item ()
 {
-    Resume template1Widget(this);
-    template1Widget.setWindowTitle("Template 1");
-    template1Widget.show();
+    m_resumeTemplate = new Resume();
+    m_resumeTemplate -> setWindowTitle("Resume Template");
+    m_resumeTemplate -> show();
+
 }
 
 void Templates::m_template2Item ()
 {
-    ResumeCoral template2Widget(this);
-    template2Widget.setWindowTitle("Template 2");
-    template2Widget.show();
+    m_resumeCoralTemplate =  new ResumeCoral();
+    m_resumeCoralTemplate -> setWindowTitle("Resume Coral");
+    m_resumeCoralTemplate -> show();
 }
 
 void Templates::m_template3Item ()
 {
-    Letter template3Widget(this);
-    template3Widget.setWindowTitle("Template 3");
-    template3Widget.show();
+    m_letterTemplate = new Letter();
+    m_letterTemplate -> setWindowTitle("Letter Template");
+    m_letterTemplate -> show();
 }
 
 void Templates::m_template4Item ()
 {
-    ProjectProposal template4Widget(this);
-    template4Widget.setWindowTitle("Template 4");
-    template4Widget.show();
+    m_projectProposalTemplate = new ProjectProposal();
+    m_projectProposalTemplate -> setWindowTitle("Project Proposal Template");
+    m_projectProposalTemplate -> show();
 }
 
 void Templates::m_template5Item ()
 {
-    Brochure template5Widget(this);
-    template5Widget.setWindowTitle("Template 5");
-    template5Widget.show();
+    m_brochureTemplate = new Brochure();
+    m_brochureTemplate -> setWindowTitle("Brochure Template");
+    m_brochureTemplate -> show();
 }
 
 void Templates::m_templateGallery ()
